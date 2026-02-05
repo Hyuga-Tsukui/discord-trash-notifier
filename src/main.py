@@ -10,7 +10,7 @@ from .trash_rules import get_trash_info
 
 def build_message(trash_types: list[str]) -> str:
     joined = " / ".join(trash_types)
-    return f"今日のゴミ出し: {joined}"
+    return f"@everyone 今日のゴミ出し: {joined}"
 
 
 def main() -> int:

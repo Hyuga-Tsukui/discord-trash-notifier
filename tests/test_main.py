@@ -18,7 +18,10 @@ def test_main_sends_message_on_weekday(monkeypatch):
     monkeypatch.setattr(main_module.DiscordClient, "send_message", fake_send_message)
 
     assert main_module.main() == 0
-    assert sent["content"] == "今日のゴミ出し: 空き缶 / ペットボトル / 空きびん / 使用済み乾電池"
+    assert (
+        sent["content"]
+        == "@everyone 今日のゴミ出し: 空き缶 / ペットボトル / 空きびん / 使用済み乾電池"
+    )
 
 
 @time_machine.travel("2026-02-07 07:00:00+09:00")
